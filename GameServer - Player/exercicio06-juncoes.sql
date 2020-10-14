@@ -50,7 +50,7 @@ WHERE
 --6. Criar uma consulta para exibir o IP do GameServer e a quantidade de Players associados a cada GameServer
 SELECT 
 	G.[IP] EndereçoIP,
-	COUNT (*) QtdePlayers
+	COUNT (G.IDGameServer) QtdePlayers
 FROM
 	GameServer G INNER JOIN Player P
 		ON G.IDGameServer = P.IDGameServer
