@@ -20,7 +20,7 @@ GROUP BY
 --3. Criar uma consulta para exibir o Nome de TODAS as marcas e a quantidade de veículo de cada uma delas.
 SELECT M.Nome, COUNT(*) QtdeVeiculos
 FROM
-	Marca M FULL JOIN Veiculo V
+	Marca M LEFT JOIN Veiculo V
 		ON M.IDMarca = V.IDMarca
 GROUP BY
 	M.Nome
