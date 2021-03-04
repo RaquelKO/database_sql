@@ -1,18 +1,18 @@
-/*Exercício 01 – View
-Utilizando os conceitos aprendidos durante a aula, realize as seguintes operações solicitadas.*/
+/*Exercï¿½cio 07 ï¿½ View
+Utilizando os conceitos aprendidos durante a aula, realize as seguintes operaï¿½ï¿½es solicitadas.*/
 
 --1. Criar uma view para exibir o Nome, UserName e Password dos Players com idade (Age) maior ou igual a 30.
 CREATE VIEW vwDetalhesPlayers
 AS
 	SELECT
 		P.Name Nome,
-		P.UserName Usuário,
+		P.UserName Usuï¿½rio,
 		P.Password Senha
 	FROM
 		Player P
 	WHERE P.Age >= 30
 -- Consultando a view:
-SELECT * FROM vwDetalhesPlayers ORDER BY Nome, Usuário, Senha
+SELECT * FROM vwDetalhesPlayers ORDER BY Nome, Usuï¿½rio, Senha
 
 --2. Criar uma view para exibir o IP, Type e CreationDate dos GameServer.
 CREATE VIEW vwDetalhesGameServer
@@ -31,14 +31,14 @@ CREATE VIEW vwPlayerAndServer
 AS
 	SELECT
 		P.Name Nome,
-		P.UserName Usuário,
+		P.UserName Usuï¿½rio,
 		G.IP,
 		G.Type Tipo
 	FROM
 		Player P INNER JOIN GameServer G
 			ON P.IDGameServer = G.IDGameServer
 -- Consultando a view:
-SELECT * FROM vwPlayerAndServer ORDER BY Nome, Usuário, IP, Tipo
+SELECT * FROM vwPlayerAndServer ORDER BY Nome, Usuï¿½rio, IP, Tipo
 
 --4. Criar uma view para exibir a quantidade de Players por GameServer. Exibir o IP do GameServer e a quantidade de players.
 CREATE VIEW vwQtdePlayersPorGameServer
@@ -67,12 +67,12 @@ AS
 -- Consultando a view:
 SELECT * FROM vwQtdePlayersCriadosPorAno ORDER BY AnoCriacao
 
---6. Criar uma view para exibir o Type do GameServer, a média e a soma de pontos dos players que estão associados ao Game Server.
+--6. Criar uma view para exibir o Type do GameServer, a mï¿½dia e a soma de pontos dos players que estï¿½o associados ao Game Server.
 CREATE VIEW vwPlayersPointsPerGameServerTypes
 AS
 	SELECT
 		G.Type Tipo,
-		AVG(P.Points) Média,
+		AVG(P.Points) Mï¿½dia,
 		SUM(P.Points) Soma
 	FROM
 		Player P INNER JOIN GameServer G

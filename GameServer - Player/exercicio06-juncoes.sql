@@ -1,5 +1,5 @@
-/*Exercício 01 – Junções
-Utilizando os conceitos aprendidos durante a aula, realize as seguintes operações solicitadas.*/
+/*Exercï¿½cio 06 ï¿½ Junï¿½ï¿½es
+Utilizando os conceitos aprendidos durante a aula, realize as seguintes operaï¿½ï¿½es solicitadas.*/
 
 --1. Criar uma consulta para exibir o Name e o UserName do Player e os seus respectivos Type do GameServer utilizado por eles.
 SELECT
@@ -17,18 +17,18 @@ FROM
 	Player P INNER JOIN GameServer G
 		ON G.IDGameServer = P.IDGameServer
 
---3. Criar uma consulta para exibir o IP de todos os GameSever e os Name dos respectivos Players quando existir associação.
+--3. Criar uma consulta para exibir o IP de todos os GameSever e os Name dos respectivos Players quando existir associaï¿½ï¿½o.
 SELECT 
-	G.[IP] EndereçoIP,
+	G.[IP] Endereï¿½oIP,
 	P.[Name] Nome
 FROM
 	GameServer G LEFT JOIN Player P
 		ON G.IDGameServer = P.IDGameServer
 
---4. Criar uma consulta para exibir o IP e CreationDate do GameServer e o Name do Player quando o seu Name possuir “Ana” em qualquer parte do texto.
+--4. Criar uma consulta para exibir o IP e CreationDate do GameServer e o Name do Player quando o seu Name possuir ï¿½Anaï¿½ em qualquer parte do texto.
 SELECT 
-	G.[IP] EndereçoIP,
-	G.CreationDate DataCriação,
+	G.[IP] Endereï¿½oIP,
+	G.CreationDate DataCriaï¿½ï¿½o,
 	P.[Name] Nome
 FROM
 	GameServer G INNER JOIN Player P
@@ -40,7 +40,7 @@ WHERE
 SELECT 
 	P.UserName Usuario,
 	P.Age Idade,
-	G.CreationDate DataCriação
+	G.CreationDate DataCriaï¿½ï¿½o
 FROM
 	GameServer G INNER JOIN Player P
 		ON G.IDGameServer = P.IDGameServer
@@ -49,7 +49,7 @@ WHERE
 
 --6. Criar uma consulta para exibir o IP do GameServer e a quantidade de Players associados a cada GameServer
 SELECT 
-	G.[IP] EndereçoIP,
+	G.[IP] Endereï¿½oIP,
 	COUNT (G.IDGameServer) QtdePlayers
 FROM
 	GameServer G INNER JOIN Player P
@@ -57,7 +57,7 @@ FROM
 GROUP BY
 	G.[IP]
 
---7. Criar uma consulta para exibir o Type do GameServer e a média de idade (Age) dos Players associados a eles.
+--7. Criar uma consulta para exibir o Type do GameServer e a mï¿½dia de idade (Age) dos Players associados a eles.
 SELECT 
 	G.[Type] TipoServidor,
 	AVG (P.Age) MediaIdade

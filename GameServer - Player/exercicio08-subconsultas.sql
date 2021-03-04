@@ -1,17 +1,17 @@
-/*Exercício 01 – SubConsultas
-Utilizando os conceitos aprendidos durante a aula, realize as seguintes operações solicitadas.*/
+/*Exercï¿½cio 08 ï¿½ SubConsultas
+Utilizando os conceitos aprendidos durante a aula, realize as seguintes operaï¿½ï¿½es solicitadas.*/
 
---1. Criar uma SubConsulta para exibir o Nome e UserName dos players que estão acima da média de idade.
+--1. Criar uma SubConsulta para exibir o Nome e UserName dos players que estï¿½o acima da mï¿½dia de idade.
 SELECT Name, UserName
 FROM Player
 WHERE Age > (SELECT AVG(Age) FROM Player)
 
---2. Criar uma SubConsulta para exibir o Nome e Password dos players que estão abaixo da média de idade.
+--2. Criar uma SubConsulta para exibir o Nome e Password dos players que estï¿½o abaixo da mï¿½dia de idade.
 SELECT Name, Password
 FROM Player
 WHERE Age < (SELECT AVG(Age) FROM Player)
 
---3. Criar uma SubConsulta para exibir o IP, Type e CreationDate que são utilizados pelos players.
+--3. Criar uma SubConsulta para exibir o IP, Type e CreationDate que sï¿½o utilizados pelos players.
 SELECT
 IP, Type, CreationDate
 FROM
@@ -19,7 +19,7 @@ GameServer
 WHERE
 IDGameServer IN (SELECT IDGameServer FROM Player)
 
---4. Criar uma SubConsulta para exibir o IP, Type e CreationDate que NÃO são utilizados pelos players.
+--4. Criar uma SubConsulta para exibir o IP, Type e CreationDate que Nï¿½O sï¿½o utilizados pelos players.
 SELECT
 IP, Type, CreationDate
 FROM
@@ -27,17 +27,17 @@ GameServer
 WHERE
 IDGameServer NOT IN (SELECT IDGameServer FROM Player)
 
---5. Criar uma SubConsulta para exibir todas as informações dos players que estão acima da pontuação (points) média.
+--5. Criar uma SubConsulta para exibir todas as informaï¿½ï¿½es dos players que estï¿½o acima da pontuaï¿½ï¿½o (points) mï¿½dia.
 SELECT *
 FROM Player
 WHERE Points > (SELECT AVG(Points) FROM Player)
 
---6. Criar uma SubConsulta para exibir o Nome, UserName e Password dos players que possuem a idade maior que o “Hulk Jedi”.
+--6. Criar uma SubConsulta para exibir o Nome, UserName e Password dos players que possuem a idade maior que o ï¿½Hulk Jediï¿½.
 SELECT Name, UserName, Password
 FROM Player
 WHERE Age > (SELECT Age FROM Player WHERE Name = 'Hulk Jedi')
 
---7. Criar uma SubConsulta para exibir o Nome, UserName e Password e Points dos players que utilizam os mesmos GameServers que o “Ace Monster” e o “Procurando Nemo”.
+--7. Criar uma SubConsulta para exibir o Nome, UserName e Password e Points dos players que utilizam os mesmos GameServers que o ï¿½Ace Monsterï¿½ e o ï¿½Procurando Nemoï¿½.
 SELECT Name, UserName, Password, Points, IDGameServer
 FROM Player
 WHERE IDGameServer IN (SELECT IDGameServer FROM Player WHERE Name IN ('Ace Monster', 'Procurando Nemo'))
